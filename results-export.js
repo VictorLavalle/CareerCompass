@@ -49,7 +49,7 @@
 
     lines.push('--');
     lines.push('');
-    lines.push('⚠️ ' + DISCLAIMER);
+    lines.push('' + DISCLAIMER);
     lines.push('');
     lines.push('Take the quiz again: ' + QUIZ_URL);
     lines.push('Learn more: github.com/VictorLavalle/CareerCompass');
