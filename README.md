@@ -1,8 +1,8 @@
-# 🧭 CareerCompass
+# CareerCompass
 
 An interactive career/vocational quiz that matches users to academic programs based on their interests, goals, and preferences. Zero dependencies — built with vanilla JavaScript.
 
-## ✨ Features
+## Features
 
 - **8-question adaptive quiz** — Covers interests, work style, career goals, and preferences
 - **Weighted matching algorithm** — Scores programs based on multi-dimensional compatibility
@@ -13,7 +13,7 @@ An interactive career/vocational quiz that matches users to academic programs ba
 - **Fully accessible** — ARIA labels, keyboard navigation, screen reader support
 - **Responsive design** — Works on desktop, tablet, and mobile
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 # Clone the repo
@@ -28,7 +28,7 @@ python3 -m http.server 8080
 
 Open `http://localhost:8080` in your browser.
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 CareerCompass/
@@ -48,7 +48,7 @@ CareerCompass/
 
 **No build step required.** All modules use the revealing module pattern via IIFEs on a shared `window.CareerCompass` namespace.
 
-## 🎯 How It Works
+## How It Works
 
 1. User answers 8 multiple-choice questions
 2. Each answer carries weighted scores mapped to program dimensions
@@ -56,7 +56,7 @@ CareerCompass/
 4. Results are ranked and displayed with career outlook data
 5. Users can export results as PDF or send via email
 
-## 🛠️ Customization
+## Customization
 
 To adapt for your own institution or use case:
 
@@ -66,10 +66,10 @@ To adapt for your own institution or use case:
 4. **Career Data** — Update `career-data.js` with relevant roles
 5. **Branding** — Replace `logo.png` and update colors in `styles.css`
 
-## 📄 License
+## License
 
 MIT
 
-## 👤 Author
+## Author
 
 **Victor Lavalle** — [victorlavalle.me](https://victorlavalle.me) | [GitHub](https://github.com/VictorLavalle)
