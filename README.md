@@ -32,18 +32,22 @@ Open `http://localhost:8080` in your browser.
 
 ```
 CareerCompass/
-├── index.html          # Main HTML structure
-├── styles.css          # All styles (no preprocessor needed)
-├── app.js              # Main orchestrator
-├── quiz-engine.js      # Question flow & state management
-├── matching.js         # Scoring algorithm
-├── career-data.js      # Career outlook per program
-├── ui-renderer.js      # DOM rendering & animations
-├── results-export.js   # PDF & email export
-├── api-client.js       # Data fetching layer
-├── data-programs.js    # Program catalog
-├── data-courses.js     # Course catalog
-└── logo.png            # App logo
+├── index.html              # Entry point
+├── package.json            # Project metadata & scripts
+├── assets/
+│   └── styles.css          # All styles
+└── src/
+    ├── app.js              # Main orchestrator
+    ├── data/
+    │   ├── career-data.js  # Career outlook per program
+    │   ├── data-programs.js# Program catalog
+    │   └── data-courses.js # Course catalog
+    └── modules/
+        ├── quiz-engine.js  # Question flow & state management
+        ├── matching.js     # Scoring algorithm
+        ├── ui-renderer.js  # DOM rendering & animations
+        ├── results-export.js # PDF & email export
+        └── api-client.js   # Data fetching layer
 ```
 
 **No build step required.** All modules use the revealing module pattern via IIFEs on a shared `window.CareerCompass` namespace.
