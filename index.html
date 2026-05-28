@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerCompass — Find your ideal academic program</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="CareerCompass Logo" class="app-logo" height="56">
+        <div class="header-text">
+            <h1>CareerCompass</h1>
+            <p class="tagline">Discover the perfect academic program for you</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- Screen: Loading -->
+        <section id="screen-loading" class="screen active">
+            <div class="loading-container">
+                <div class="spinner" aria-label="Loading data"></div>
+                <p>Loading program data...</p>
+            </div>
+        </section>
+
+        <!-- Screen: Welcome -->
+        <section id="screen-welcome" class="screen" aria-label="Welcome screen">
+            <div class="welcome-container">
+                <h2>Welcome to CareerCompass!</h2>
+                <p class="welcome-description">
+                    Answer 8 quick questions about your interests, career goals, and preferences
+                    to discover which academic program aligns best with you.
+                </p>
+                <button id="btn-start" class="btn btn-primary" aria-label="Start the quiz" disabled>
+                    Start Quiz
+                </button>
+            </div>
+        </section>
+
+        <!-- Screen: Quiz -->
+        <section id="screen-quiz" class="screen" aria-label="Interactive quiz">
+            <div id="progress-bar" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="8" aria-valuenow="0" aria-label="Quiz progress">
+                <div class="progress-bar-fill"></div>
+                <span class="progress-bar-text"></span>
+            </div>
+            <div id="question-container" class="question-container" aria-live="polite">
+                <!-- Dynamic question rendered here -->
+            </div>
+            <div class="quiz-navigation">
+                <button id="btn-prev" class="btn btn-secondary" aria-label="Go to previous question" disabled>
+                    Previous
+                </button>
+                <button id="btn-next" class="btn btn-primary" aria-label="Go to next question">
+                    Next
+                </button>
+            </div>
+        </section>
+
+        <!-- Screen: Results -->
+        <section id="screen-results" class="screen" aria-label="Quiz results">
+            <h2>Your Results</h2>
+            <p class="results-description">Programs ranked by compatibility with your profile:</p>
+            <div class="export-buttons" aria-label="Export options">
+                <button id="btn-download" class="btn btn-primary btn-export" aria-label="Download results as PDF">
+                    📄 Download Results
+                </button>
+                <button id="btn-email" class="btn btn-secondary btn-export" aria-label="Send results to email">
+                    ✉️ Send to Email
+                </button>
+            </div>
+            <div id="results-list" class="results-list" aria-label="Recommended programs list">
+                <!-- Program cards rendered here -->
+            </div>
+            <p class="export-disclaimer">⚠️ These are suggestions to explore — not enrollment decisions.</p>
+
+            <!-- Feedback Section -->
+            <div id="feedback-section" class="feedback-section" aria-label="Feedback">
+                <h3 class="feedback-title">How was your experience?</h3>
+                <div class="feedback-rating" role="radiogroup" aria-label="Rate your experience">
+                    <button class="feedback-star" data-rating="1" aria-label="1 star">★</button>
+                    <button class="feedback-star" data-rating="2" aria-label="2 stars">★</button>
+                    <button class="feedback-star" data-rating="3" aria-label="3 stars">★</button>
+                    <button class="feedback-star" data-rating="4" aria-label="4 stars">★</button>
+                    <button class="feedback-star" data-rating="5" aria-label="5 stars">★</button>
+                </div>
+                <textarea id="feedback-text" class="feedback-textarea" placeholder="Any suggestions? Tell us how we can improve..." maxlength="500" rows="3" aria-label="Suggestions"></textarea>
+                <button id="btn-feedback-submit" class="btn btn-primary btn-feedback-submit" disabled>
+                    Send Feedback
+                </button>
+                <p id="feedback-thanks" class="feedback-thanks" hidden>✅ Thanks for your feedback!</p>
+            </div>
+
+            <button id="btn-restart" class="btn btn-secondary" aria-label="Restart the quiz">
+                Restart Quiz
+            </button>
+        </section>
+
+        <!-- Screen: Error -->
+        <section id="screen-error" class="screen" aria-label="Error screen">
+            <div class="error-container">
+                <h2>Oops! Something went wrong</h2>
+                <p id="error-message" class="error-message">Could not load data. Check your connection and try again.</p>
+                <button id="btn-retry" class="btn btn-primary" aria-label="Retry loading data">
+                    Retry
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>CareerCompass — Built by Victor Lavalle</p>
+    </footer>
+
+    <!-- Toast notification -->
+    <div id="toast" class="toast" aria-live="polite" hidden>
+        <span id="toast-message"></span>
+    </div>
+
+    <!-- Scripts in dependency order -->
+    <script>
+        // Global namespace
+        window.CareerCompass = {};
+    </script>
+    <script src="data-programs.js"></script>
+    <script src="data-courses.js"></script>
+    <script src="career-data.js"></script>
+    <script src="api-client.js"></script>
+    <script src="quiz-engine.js"></script>
+    <script src="matching.js"></script>
+    <script src="ui-renderer.js"></script>
+    <script src="results-export.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
