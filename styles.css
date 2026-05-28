@@ -1,9 +1,9 @@
 /* ═══════════════════════════════════════════════════════════════════════
-   MyNextStep — WGU Design System Styles
-   Interactive WGU academic program recommendation quiz
+   CareerCompass — Design System Styles
+   Interactive academic program recommendation quiz
    ═══════════════════════════════════════════════════════════════════════ */
 
-/* ── CSS Custom Properties (WGU Brand) ─────────────────────────────── */
+/* ── CSS Custom Properties ─────────────────────────────── */
 
 :root {
   /* Backgrounds */
@@ -91,8 +91,8 @@ p {
 /* ── Layout ────────────────────────────────────────────────────────── */
 
 /*
-  Header: clean white treatment with WGU-navy text and a thin navy accent
-  strip at the top. This keeps the WGU brand presence without duplicating
+  Header: clean white treatment with navy text and a thin accent
+  strip at the top.
   the navy gradient bar of the parent dialog when this app is embedded
   via iframe inside basic-info's "Still having doubts?" modal.
 */
@@ -182,7 +182,7 @@ footer {
   transform: translateY(0);
 }
 
-/* ── Buttons (WGU SSE style) ───────────────────────────────────────── */
+/* ── Buttons ───────────────────────────────────────── */
 
 .btn {
   display: inline-flex;
@@ -1296,7 +1296,7 @@ footer {
 
   /* Print disclaimer at bottom */
   #screen-results::after {
-    content: "⚠️ These are suggestions to explore — not enrollment decisions. Your match score reflects competency alignment with program coursework. | Take the quiz again: wgu-edu.github.io/fy26-wis-summit-hackathon/ | Learn more: wgu.edu";
+    content: "⚠️ These are suggestions to explore — not enrollment decisions. Your match score reflects competency alignment with program coursework. | Take the quiz again: github.com/VictorLavalle/CareerCompass | Learn more: github.com/VictorLavalle/CareerCompass";
     display: block;
     margin-top: 20pt;
     padding-top: 10pt;
